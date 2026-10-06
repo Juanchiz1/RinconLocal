@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,20 +7,25 @@
 }
 
 :root {
-    --verde-sinu: #4f7942;     
-    --verde-oscuro: #2e4a26;   
-    --terracota: #c1432e;       
-    --dorado: #e8a93e;          
-    --crema: #f5ecd9;           
-    --negro-vueltiao: #2b2420;  
-    --azul-rio: #4e8fa6;       
-    --texto: #2b2420;
+    --verde-sinu: #3F6B4A;
+    --verde-oscuro: #1F3620;
+    --terracota: #C1432E;
+    --dorado: #E8A93E;
+    --crema: #F5ECD9;
+    --negro-vueltiao: #241E19;
+    --azul-rio: #3D7E96;
+    --texto: #241E19;
 }
-
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Work Sans', Arial, sans-serif;
     background-color: var(--crema);
     color: var(--texto);
+}
+
+h1, h2, h3 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .cabecera {
