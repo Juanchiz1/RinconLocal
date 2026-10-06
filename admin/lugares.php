@@ -26,12 +26,13 @@ $lugares = $stmt->fetchAll();
 
         <table class="tabla-admin">
             <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Categoría</th>
-                    <th>Reseñas</th>
-                    <th>Acciones</th>
-                </tr>
+               <tr>
+    <th>Nombre</th>
+    <th>Categoría</th>
+    <th>Reseñas</th>
+    <th>Destacado</th>
+    <th>Acciones</th>
+</tr>
             </thead>
             <tbody>
                 <?php foreach ($lugares as $lugar): ?>
@@ -44,6 +45,14 @@ $lugares = $stmt->fetchAll();
                         <td><?= limpiar($lugar['nombre']) ?></td>
                         <td><?= limpiar($lugar['categoria']) ?></td>
                         <td><?= $totalResenas ?></td>
+                        <td>
+    <form method="POST" action="toggle_destacado.php">
+        <input type="hidden" name="id" value="<?= $lugar['id'] ?>">
+        <button type="submit" class="boton-destacado <?= $lugar['destacado'] ? 'activo' : '' ?>">
+            <?= $lugar['destacado'] ? '★ Sí' : '☆ No' ?>
+        </button>
+    </form>
+</td>
                         <td class="celda-acciones">
                             <a href="editar_lugar.php?id=<?= $lugar['id'] ?>" class="boton-tabla boton-editar">Editar</a>
                             <form method="POST" action="eliminar_lugar.php" class="form-eliminar-inline" onsubmit="return confirm('¿Seguro que quieres eliminar este lugar? Esto también borrará todas sus reseñas.');">
@@ -54,7 +63,7 @@ $lugares = $stmt->fetchAll();
                     </tr>
                 <?php endforeach; ?>
                 <?php if (count($lugares) === 0): ?>
-                    <tr><td colspan="4">No hay lugares registrados todavía.</td></tr>
+                    <tr><td colspan="5">No hay lugares registrados todavía.</td></tr>
                 <?php endif; ?>
             </tbody>
         </table>

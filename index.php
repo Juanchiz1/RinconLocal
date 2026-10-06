@@ -5,6 +5,8 @@ $bannerSitio = obtenerConfiguracion($pdo, 'banner_sitio', 'assets/banner_monteri
 
 $stmt = $pdo->query("SELECT * FROM lugares ORDER BY nombre ASC");
 $lugares = $stmt->fetchAll();
+$stmtDestacados = $pdo->query("SELECT * FROM lugares WHERE destacado = 1 ORDER BY nombre ASC");
+$lugaresDestacados = $stmtDestacados->fetchAll();
 
 $stmtResenas = $pdo->prepare("SELECT * FROM resenas WHERE lugar_id = ?");
 foreach ($lugares as &$lugar) {
@@ -62,7 +64,24 @@ if ($ordenandoPorCercania) {
         <p id="mensaje-geo" class="mensaje-geo"></p>
     </header>
     <div class="franja-vueltiada"></div>
-
+    
+    <?php if (count($lugaresDestacados) > 0): ?>
+    <section class="seccion-destacados">
+        <h2>Destacados</h2>
+        <div class="carrusel-destacados">
+            <?php foreach ($lugaresDestacados as $destacado): ?>
+                <a href="lugar.php?id=<?= $destacado['id'] ?>" class="tarjeta-destacado"
+                   <?php if ($destacado['imagen']): ?>style="background-image: url('<?= limpiar($destacado['imagen']) ?>');"<?php endif; ?>>
+                    <span class="overlay-destacado">
+                        <strong><?= limpiar($destacado['nombre']) ?></strong>
+                        <span><?= limpiar($destacado['categoria']) ?></span>
+                    </span>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <?php endif; ?>
+    
     <main class="contenedor-lugares">
         <div class="barra-busqueda">
             <input type="text" id="buscador-lugares" placeholder="🔍 Buscar por nombre o categoría..." autocomplete="off">

@@ -3,12 +3,17 @@ USE rincon_local;
 
 CREATE TABLE lugares (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(120) NOT NULL,
+    nombre VARCHAR(120) NOT NULL UNIQUE,
     categoria VARCHAR(60) NOT NULL,
     direccion VARCHAR(200),
+    descripcion TEXT DEFAULT NULL,
     imagen VARCHAR(255) DEFAULT NULL,
     latitud DECIMAL(10, 8),
     longitud DECIMAL(11, 8),
+    horario_apertura TIME DEFAULT NULL,
+    horario_cierre TIME DEFAULT NULL,
+    recomendaciones TEXT DEFAULT NULL,
+    destacado TINYINT(1) NOT NULL DEFAULT 0,
     creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
