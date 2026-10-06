@@ -110,7 +110,7 @@ h1, h2, h3 {
     overflow: hidden;
     text-decoration: none;
     color: inherit;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 14px rgba(36, 30, 25, 0.12);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -128,9 +128,8 @@ h1, h2, h3 {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    position: relative;
+    clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px);
 }
-
 .imagen-lugar.sin-imagen {
     background: linear-gradient(135deg, var(--terracota), var(--dorado));
     display: flex;
@@ -145,15 +144,14 @@ h1, h2, h3 {
 }
 
 .categoria-badge {
-    margin: 10px;
-    padding: 5px 12px;
-    background-color: rgba(31, 92, 79, 0.9);
+    display: inline-block;
+    margin: 14px 10px 10px 36px;
+    padding: 5px 14px 5px 18px;
+    background-color: var(--azul-rio);
     color: white;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-radius: 20px;
-    font-weight: bold;
+    font-size: 0.78rem;
+    font-weight: 600;
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 10px 100%, 0 50%);
 }
 
 .info-lugar {
