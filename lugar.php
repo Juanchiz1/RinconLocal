@@ -40,7 +40,7 @@ $promediosCategorias = promediosPorCategoria($resenas);
     <header class="cabecera-lugar" <?php if ($lugar['imagen']): ?>style="background-image: url('<?= limpiar($lugar['imagen']) ?>');"<?php endif; ?>>
         <div class="overlay-cabecera-lugar">
             <a href="index.php" class="volver-lugar">← Volver al listado</a>
-            <span class="categoria-badge"><?= limpiar($lugar['categoria']) ?></span>
+            <span class="categoria-badge categoria-badge-centrada"><?= limpiar($lugar['categoria']) ?></span>
             <h1><?= limpiar($lugar['nombre']) ?></h1>
             <p><?= limpiar($lugar['direccion']) ?></p>
             <p class="promedio-grande" id="promedio-grande" <?= count($resenas) === 0 ? 'style="display:none;"' : '' ?>>

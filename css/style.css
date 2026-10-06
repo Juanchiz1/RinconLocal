@@ -290,6 +290,7 @@ h1, h2, h3 {
 .overlay-cabecera-lugar h1 {
     font-size: 1.9rem;
     margin: 8px 0 4px;
+    letter-spacing: -0.02em;
 }
 
 .promedio-grande {
@@ -430,11 +431,11 @@ h1, h2, h3 {
     display: inline-block;
     background-color: var(--dorado);
     color: var(--negro-vueltiao);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: bold;
+    padding: 8px 18px 8px 22px;
+    font-weight: 600;
     font-size: 0.9rem;
     margin-bottom: 20px;
+    clip-path: polygon(12px 0, 100% 0, 100% 100%, 12px 100%, 0 50%);
 }
 
 .galeria-lugar {
@@ -766,8 +767,8 @@ h1, h2, h3 {
 .tabla-admin th {
     background-color: var(--verde-sinu);
     color: white;
-    font-size: 0.8rem;
-    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .celda-acciones {
@@ -780,9 +781,10 @@ h1, h2, h3 {
 }
 
 .boton-tabla {
-    padding: 6px 12px;
-    border-radius: 6px;
+    padding: 6px 14px;
+    border-radius: 3px;
     font-size: 0.8rem;
+    font-weight: 600;
     text-decoration: none;
     border: none;
     cursor: pointer;
@@ -858,4 +860,8 @@ h1, h2, h3 {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+.categoria-badge-centrada {
+    margin: 0 0 10px 10px;
 }
